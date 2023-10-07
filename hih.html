@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>I Love You</title>
+	<style>body {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		background-color: #f5f5f5;
+	}
+	
+	.container {
+		text-align: center;
+		position: relative;
+	}
+	
+	.heart {
+		width: 100px;
+		height: 90px;
+		background-color: #ff0066;
+		position: absolute;
+		top: -45px;
+		left: calc(50% - 50px);
+		transform: rotate(-45deg);
+		border-radius: 100px 100px 100px 0px;
+		animation: heartbeat 1.5s infinite;
+		z-index: 0;
+	}
+	
+	.heart:before,
+	.heart:after {
+		content: "";
+		width: 100px;
+		height: 140px;
+		border-radius: 100px 100px 0 0;
+		background-color: #ff0066;
+		position: absolute;
+	}
+	
+	.heart:before {
+		left: 100px;
+		transform: rotate(-45deg);
+		transform-origin: 0 100%;
+	}
+	
+	.heart:after {
+		left: 0;
+		transform: rotate(45deg);
+		transform-origin: 100% 100%;
+	}
+	
+	h1 {
+		font-size: 3rem;
+		color: #ff0066;
+		font-family: 'Arial', sans-serif;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+		margin-top: 70px;
+		position: relative;
+		z-index: 1;
+	}
+	
+	@keyframes heartbeat {
+		0% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.1);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+	</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heart"></div>
+        <h1>I love you</h1>
+    </div>
+</body>
+
+</html>
